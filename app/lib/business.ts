@@ -10,6 +10,11 @@ export const BUSINESS = {
   coverage: "Nigeria — onshore & offshore coverage",
   areaServed: ["Nigeria", "West Africa"],
   officeHours: "Mon–Fri, 8:00–17:00 WAT",
+  address:
+    "44 NDDC Road, Rumuokwurusi Pipeline, Port Harcourt, Rivers State, Nigeria",
+  addressShort: "Port Harcourt, Rivers State, Nigeria",
+  addressHref:
+    "https://www.google.com/maps/search/?api=1&query=44+NDDC+Road+Rumuokwurusi+Pipeline+Port+Harcourt+Rivers+State+Nigeria",
 } as const;
 
 export const SOCIALS = {
@@ -24,6 +29,6 @@ export const SOCIAL_LINKS = [
   { name: "X", href: SOCIALS.x },
   { name: "Instagram", href: SOCIALS.instagram },
   { name: "LinkedIn", href: SOCIALS.linkedin },
-  { name: "Facebook", href: SOCIALS.facebook },
-  { name: "TikTok", href: SOCIALS.tiktok },
+  // { name: "Facebook", href: SOCIALS.facebook },
+  // { name: "TikTok", href: SOCIALS.tiktok },
 ] as const;

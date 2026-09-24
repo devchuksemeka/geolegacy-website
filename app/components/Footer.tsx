@@ -135,6 +135,17 @@ export default function Footer() {
                 stroke="currentColor"
                 strokeWidth="1.6"
               >
+                <path d="M3 21V4h10v17M13 9h6v12M7 8h2M7 12h2M7 16h2M17 12h.01M21 21H3" />
+              </svg>
+              {BUSINESS.address}
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+              >
                 <path d="M12 21s-7-6.5-7-11a7 7 0 0114 0c0 4.5-7 11-7 11z" />
                 <circle cx="12" cy="10" r="2.3" />
               </svg>

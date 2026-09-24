@@ -2,14 +2,24 @@
 
 import { useCallback, useState } from "react";
 
+export type RevealVariant =
+  | "up"
+  | "down"
+  | "left"
+  | "right"
+  | "scale"
+  | "blur";
+
 export default function Reveal({
   children,
   className = "",
   delay = 0,
+  variant = "up",
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  variant?: RevealVariant;
 }) {
   const [visible, setVisible] = useState(false);
 
@@ -36,7 +46,7 @@ export default function Reveal({
   return (
     <div
       ref={ref}
-      className={`reveal${visible ? " in-view" : ""}${
+      className={`reveal reveal--${variant}${visible ? " in-view" : ""}${
         className ? ` ${className}` : ""
       }`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}

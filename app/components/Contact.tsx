@@ -1,5 +1,6 @@
 import { BUSINESS } from "../lib/business";
 import ContactForm from "./ContactForm";
+import Reveal from "./Reveal";
 
 type ContactProps = {
   heading?: string;
@@ -44,6 +45,15 @@ const CHANNELS = [
     ),
   },
   {
+    label: "Office address",
+    value: BUSINESS.address,
+    note: BUSINESS.officeHours,
+    href: BUSINESS.addressHref,
+    icon: (
+      <path d="M3 21V4h10v17M13 9h6v12M7 8h2M7 12h2M7 16h2M17 12h.01M21 21H3" />
+    ),
+  },
+  {
     label: "Coverage",
     value: BUSINESS.areaServed.join(" & "),
     note: "Onshore and offshore project delivery",
@@ -65,61 +75,65 @@ export default function Contact({
       <div className="grid-field" style={{ opacity: 0.15 }} />
       <div className="wrap contact-grid">
         <div className="contact-info">
-          <h2>{heading}</h2>
-          <p>{description}</p>
+          <Reveal variant="left">
+            <h2>{heading}</h2>
+            <p>{description}</p>
 
-          <div className="contact-channels">
-            {CHANNELS.map((channel) => {
-              const inner = (
-                <>
-                  <span className="contact-channel-icon" aria-hidden="true">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                    >
-                      {channel.icon}
-                    </svg>
-                  </span>
-                  <span>
-                    <span className="contact-channel-label">
-                      {channel.label}
+            <div className="contact-channels">
+              {CHANNELS.map((channel) => {
+                const inner = (
+                  <>
+                    <span className="contact-channel-icon" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                      >
+                        {channel.icon}
+                      </svg>
                     </span>
-                    <span className="contact-channel-value">
-                      {channel.value}
+                    <span>
+                      <span className="contact-channel-label">
+                        {channel.label}
+                      </span>
+                      <span className="contact-channel-value">
+                        {channel.value}
+                      </span>
+                      <span className="contact-channel-note">
+                        {channel.note}
+                      </span>
                     </span>
-                    <span className="contact-channel-note">
-                      {channel.note}
-                    </span>
-                  </span>
-                </>
-              );
+                  </>
+                );
 
-              return channel.href ? (
-                <a
-                  key={channel.label}
-                  className="contact-channel"
-                  href={channel.href}
-                  target={channel.href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    channel.href.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div key={channel.label} className="contact-channel">
-                  {inner}
-                </div>
-              );
-            })}
-          </div>
+                return channel.href ? (
+                  <a
+                    key={channel.label}
+                    className="contact-channel"
+                    href={channel.href}
+                    target={channel.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      channel.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <div key={channel.label} className="contact-channel">
+                    {inner}
+                  </div>
+                );
+              })}
+            </div>
+          </Reveal>
         </div>
 
-        <ContactForm title={formTitle} formId={formId} />
+        <Reveal variant="right" delay={80}>
+          <ContactForm title={formTitle} formId={formId} />
+        </Reveal>
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ export type Project = {
   services: string[];
   stats: { label: string; value: string }[];
   variant: "land" | "water" | "ground" | "signal";
+  image: string;
 };
 
 const FEATURE: Project = {
@@ -32,6 +33,7 @@ const FEATURE: Project = {
     { label: "Field campaign", value: "9 weeks" },
   ],
   variant: "land",
+  image: "/images/work/featured.jpg",
 };
 
 const GRID: Project[] = [
@@ -51,6 +53,7 @@ const GRID: Project[] = [
       { label: "Field campaign", value: "6 weeks" },
     ],
     variant: "water",
+    image: "/images/work/proj-01.jpg",
   },
   {
     id: "ikeja-industrial",
@@ -68,6 +71,7 @@ const GRID: Project[] = [
       { label: "Lab samples", value: "120" },
     ],
     variant: "ground",
+    image: "/images/work/proj-02.jpg",
   },
   {
     id: "bonny-pipeline",
@@ -85,6 +89,7 @@ const GRID: Project[] = [
       { label: "Deliverables", value: "2 weeks" },
     ],
     variant: "signal",
+    image: "/images/work/proj-03.jpg",
   },
   {
     id: "abuja-gis",
@@ -101,6 +106,7 @@ const GRID: Project[] = [
       { label: "Service zones", value: "4" },
     ],
     variant: "signal",
+    image: "/images/work/proj-04.jpg",
   },
   {
     id: "onne-jetty",
@@ -117,6 +123,7 @@ const GRID: Project[] = [
       { label: "Seabed samples", value: "32" },
     ],
     variant: "water",
+    image: "/images/work/proj-05.jpg",
   },
   {
     id: "kubwa-housing",
@@ -133,6 +140,7 @@ const GRID: Project[] = [
       { label: "Titles processed", value: "780" },
     ],
     variant: "land",
+    image: "/images/work/proj-06.jpg",
   },
   {
     id: "tincan-berth",
@@ -149,6 +157,7 @@ const GRID: Project[] = [
       { label: "Max depth", value: "45 m" },
     ],
     variant: "ground",
+    image: "/images/work/proj-07.jpg",
   },
   {
     id: "owo-line",
@@ -165,6 +174,7 @@ const GRID: Project[] = [
       { label: "Tower spots", value: "96" },
     ],
     variant: "land",
+    image: "/images/work/proj-08.jpg",
   },
 ];
 

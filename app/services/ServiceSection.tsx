@@ -1,17 +1,6 @@
 import Link from "next/link";
 import Reveal from "../components/Reveal";
-import {
-  TopoContours,
-  CrossSectionStrata,
-  RadarRings,
-} from "../components/IndustrialBackdrops";
 import type { Service } from "./service-data";
-
-const BACKDROPS = {
-  topo: TopoContours,
-  strata: CrossSectionStrata,
-  radar: RadarRings,
-} as const;
 
 export default function ServiceSection({
   service,
@@ -21,24 +10,25 @@ export default function ServiceSection({
   index: number;
 }) {
   const dark = index % 2 === 1;
-  const Backdrop = BACKDROPS[service.backdrop];
 
   return (
     <section
-      className={`svc-section section-pad${dark ? " svc-section--dark" : ""}`}
+      className={`svc-section section-pad svc-section--bg${
+        dark ? " svc-section--dark" : ""
+      }`}
       id={service.id}
     >
-      {dark && (
-        <>
-          <div className="bg-art grid-field grid-field--light" />
-          <div className="bg-art svc-art">
-            <Backdrop className="bg-art" />
-          </div>
-        </>
-      )}
+      <div
+        className="svc-bg"
+        style={{ backgroundImage: `url(${service.image})` }}
+        aria-hidden="true"
+      />
+      <div className="svc-bg-overlay" aria-hidden="true" />
+
+      <div className="bg-art grid-field grid-field--light svc-gridfield" />
 
       <div className="wrap svc-layout">
-        <Reveal className="svc-copy">
+        <Reveal variant="left" className="svc-copy">
           <span className={`svc-eyebrow${dark ? " svc-eyebrow--light" : ""}`}>
             {service.eyebrow}
           </span>
@@ -54,6 +44,7 @@ export default function ServiceSection({
         </Reveal>
 
         <Reveal
+          variant="right"
           delay={120}
           className={`svc-spec${dark ? " svc-spec--dark" : ""}`}
         >

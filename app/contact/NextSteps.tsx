@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal";
+import PhotoBand from "../components/PhotoBand";
 
 const STEPS = [
   {
@@ -42,6 +43,12 @@ export default function NextSteps() {
             </Reveal>
           ))}
         </div>
+
+        <PhotoBand
+          src="/images/work/contact.jpg"
+          alt="GeoLegacy survey team mobilising equipment for on-site work"
+          className="mission-photo nextsteps-photo"
+        />
       </div>
     </section>
   );

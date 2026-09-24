@@ -1,5 +1,6 @@
 import { CrossSectionStrata } from "../components/IndustrialBackdrops";
 import Reveal from "../components/Reveal";
+import PhotoBand from "../components/PhotoBand";
 
 export default function Mission() {
   return (
@@ -8,7 +9,7 @@ export default function Mission() {
         <CrossSectionStrata className="bg-art" />
       </div>
       <div className="wrap">
-        <Reveal>
+        <Reveal variant="scale">
           <span className="kicker kicker-light">Why we exist</span>
           <blockquote className="mission-statement">
             To give engineers, operators and investors{" "}
@@ -34,6 +35,13 @@ export default function Mission() {
             </p>
           </Reveal>
         </div>
+
+        <PhotoBand
+          src="/images/work/about-mission.jpg"
+          alt="GeoLegacy survey crew on a vessel during offshore site work"
+          caption="Field operations — offshore campaign"
+          className="mission-photo"
+        />
       </div>
     </section>
   );

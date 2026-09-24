@@ -94,10 +94,6 @@ export default function ContactHero() {
         <a href="#survey-request" className="btn btn-light contact-hero-cta">
           Request a Survey
         </a>
-
-        <span className="scroll-cue" aria-hidden="true">
-          Scroll
-        </span>
       </div>
     </section>
   );

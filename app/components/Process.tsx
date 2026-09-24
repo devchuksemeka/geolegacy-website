@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const STEPS = [
   {
     num: "01",
@@ -23,24 +25,32 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="section-pad" id="process">
+    <section className="section-pad px-section" id="process">
+      <div
+        className="px-bg"
+        style={{ backgroundImage: "url(/images/work/services-bg-1.jpg)" }}
+        aria-hidden="true"
+      />
+      <div className="px-overlay px-overlay--light" aria-hidden="true" />
       <div className="wrap">
         <div className="section-head">
-          <span className="kicker">How a project moves</span>
-          <h2>From scope to delivered data</h2>
-          <p>
-            A consistent four-stage workflow keeps every survey on schedule,
-            on standard and easy for your team to act on.
-          </p>
+          <Reveal>
+            <span className="kicker">How a project moves</span>
+            <h2>From scope to delivered data</h2>
+            <p>
+              A consistent four-stage workflow keeps every survey on schedule,
+              on standard and easy for your team to act on.
+            </p>
+          </Reveal>
         </div>
 
         <div className="process-grid">
-          {STEPS.map((step) => (
-            <div className="process-step" key={step.num}>
+          {STEPS.map((step, i) => (
+            <Reveal key={step.num} delay={i * 100} className="process-step">
               <span className="process-num">{step.num}</span>
               <h3>{step.heading}</h3>
               <p>{step.body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

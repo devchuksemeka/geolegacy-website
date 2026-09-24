@@ -1,5 +1,6 @@
 import { TopoContours } from "../components/IndustrialBackdrops";
 import Reveal from "../components/Reveal";
+import ServicesHeroPhoto from "./ServicesHeroPhoto";
 
 const CHIPS = [
   { label: "Six integrated service lines", icon: "grid" },
@@ -46,6 +47,7 @@ function ChipIcon({ icon }: { icon: string }) {
 export default function ServicesHero() {
   return (
     <section className="services-hero" id="services-hero">
+      <ServicesHeroPhoto />
       <div className="bg-art grid-field grid-field--light" />
       <div className="bg-art">
         <TopoContours className="bg-art" />
@@ -72,10 +74,6 @@ export default function ServicesHero() {
             </Reveal>
           ))}
         </div>
-
-        <span className="scroll-cue" aria-hidden="true">
-          Scroll
-        </span>
       </div>
     </section>
   );

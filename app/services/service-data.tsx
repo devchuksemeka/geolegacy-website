@@ -9,6 +9,7 @@ export type Service = {
   deliverables: string[];
   applications: string[];
   backdrop: ServiceBackdrop;
+  image: string;
   icon: React.ReactNode;
 };
 
@@ -30,6 +31,7 @@ export const SERVICES: Service[] = [
     ],
     applications: ["Urban planning", "Real estate & title", "Infrastructure", "Mining & quarrying"],
     backdrop: "topo",
+    image: "/images/work/service-01.jpg",
     icon: <path d="M3 20l6-14 4 8 3-6 5 12H3z" />,
   },
   {
@@ -49,6 +51,7 @@ export const SERVICES: Service[] = [
     ],
     applications: ["Ports & harbours", "Dredging & reclamation", "Offshore energy", "Inland waterways"],
     backdrop: "radar",
+    image: "/images/work/service-02.jpg",
     icon: (
       <path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0M12 4v9" />
     ),
@@ -70,6 +73,7 @@ export const SERVICES: Service[] = [
     ],
     applications: ["Route selection", "Utility detection", "Offshore investigation", "Engineering design"],
     backdrop: "strata",
+    image: "/images/work/service-03.jpg",
     icon: <path d="M3 12h4l2-7 4 14 2-7h6" />,
   },
   {
@@ -89,6 +93,7 @@ export const SERVICES: Service[] = [
     ],
     applications: ["Foundations & structures", "Roads & pavements", "Slope stability", "Earthworks & fill"],
     backdrop: "strata",
+    image: "/images/work/service-04.jpg",
     icon: <path d="M12 2v20M4 8l8-6 8 6M4 8v12M20 8v12M4 20h16" />,
   },
   {
@@ -108,6 +113,7 @@ export const SERVICES: Service[] = [
     ],
     applications: ["Utilities & networks", "Asset management", "Environment & land use", "Integrated operations"],
     backdrop: "topo",
+    image: "/images/work/service-05.jpg",
     icon: <path d="M12 21s-7-6.5-7-11a7 7 0 0114 0c0 4.5-7 11-7 11z" />,
   },
   {
@@ -127,6 +133,7 @@ export const SERVICES: Service[] = [
     ],
     applications: ["Energy & renewables", "Marine projects", "Development approvals", "ESG reporting"],
     backdrop: "radar",
+    image: "/images/work/service-06.jpg",
     icon: <path d="M4 4h16v6H4zM4 14h7v6H4zM14 14h6v6h-6z" />,
   },
 ];

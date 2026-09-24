@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const ACCREDS = [
   {
     heading: "QHSE-led operations",
@@ -29,7 +31,7 @@ export default function Credibility() {
   return (
     <section className="credibility section-pad">
       <div className="wrap">
-        <div>
+        <Reveal variant="right">
           <span className="kicker">Client testimonial</span>
           <blockquote>
             &ldquo;GeoLegacy brought the same discipline to our onshore survey
@@ -43,11 +45,11 @@ export default function Credibility() {
               <div className="quote-role">Infrastructure Development Client</div>
             </div>
           </div>
-        </div>
+        </Reveal>
 
         <div className="accred-list">
-          {ACCREDS.map((accred) => (
-            <div className="accred-card" key={accred.heading}>
+          {ACCREDS.map((accred, i) => (
+            <Reveal key={accred.heading} delay={i * 90} className="accred-card">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -58,7 +60,7 @@ export default function Credibility() {
               </svg>
               <h4>{accred.heading}</h4>
               <p>{accred.body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

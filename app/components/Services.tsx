@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "./Reveal";
 
 const SERVICES = [
   {
@@ -39,21 +40,29 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section className="services section-pad" id="services">
+    <section className="services section-pad px-section" id="services">
+      <div
+        className="px-bg"
+        style={{ backgroundImage: "url(/images/work/services-hero.jpg)" }}
+        aria-hidden="true"
+      />
+      <div className="px-overlay px-overlay--light" aria-hidden="true" />
       <div className="wrap">
         <div className="section-head">
-          <span className="kicker">What we do</span>
-          <h2>Full-spectrum survey and geospatial services</h2>
-          <p>
-            One survey partner for every layer of investigation your project
-            needs — from initial positioning to final engineering-ready
-            reporting.
-          </p>
+          <Reveal>
+            <span className="kicker">What we do</span>
+            <h2>Full-spectrum survey and geospatial services</h2>
+            <p>
+              One survey partner for every layer of investigation your project
+              needs — from initial positioning to final engineering-ready
+              reporting.
+            </p>
+          </Reveal>
         </div>
 
         <div className="service-grid">
-          {SERVICES.map((service) => (
-            <div className="service-card" key={service.heading}>
+          {SERVICES.map((service, i) => (
+            <Reveal key={service.heading} delay={(i % 3) * 90} className="service-card">
               <svg
                 className="service-icon"
                 viewBox="0 0 24 24"
@@ -65,24 +74,26 @@ export default function Services() {
               </svg>
               <h3>{service.heading}</h3>
               <p>{service.body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         <div className="section-more">
-          <Link href="/services" className="section-link">
-            Explore all services
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </Link>
+          <Reveal variant="scale">
+            <Link href="/services" className="section-link">
+              Explore all services
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
+          </Reveal>
         </div>
       </div>
     </section>

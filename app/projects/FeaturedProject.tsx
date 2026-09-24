@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { FEATURED_PROJECT } from "./projects-data";
-import ProjectArt from "./ProjectArt";
 import Reveal from "../components/Reveal";
 
 export default function FeaturedProject() {
@@ -19,10 +19,19 @@ export default function FeaturedProject() {
           </div>
         </Reveal>
 
-        <Reveal delay={80}>
+        <Reveal variant="scale" delay={80}>
           <div className="featured-card">
             <div className="featured-art">
-              <ProjectArt variant={project.variant} />
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 46vw"
+                className="featured-art-img"
+                style={{ objectFit: "cover" }}
+              />
+              <span className="featured-scan" aria-hidden="true" />
               <span className="featured-index">01</span>
             </div>
             <div className="featured-body">

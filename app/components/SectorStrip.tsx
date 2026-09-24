@@ -30,38 +30,44 @@ const SECTORS = [
   },
 ];
 
+import Reveal from "./Reveal";
+
 export default function SectorStrip() {
   return (
     <section className="sector-strip section-pad">
       <div className="wrap">
         <div className="trusted-head">
-          <span className="kicker">Who trusts us</span>
-          <h2>Trusted across Nigeria&apos;s most demanding sectors</h2>
-          <p>
-            From coastal terminals to mixed-use estates, our data sits behind
-            the decisions of operators, planners and investors.
-          </p>
+          <Reveal>
+            <span className="kicker">Who trusts us</span>
+            <h2>Trusted across Nigeria&apos;s most demanding sectors</h2>
+            <p>
+              From coastal terminals to mixed-use estates, our data sits behind
+              the decisions of operators, planners and investors.
+            </p>
+          </Reveal>
         </div>
 
         <ul className="trusted-grid">
-          {SECTORS.map((sector) => (
-            <li className="trusted-card" key={sector.name}>
-              <span className="trusted-icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {sector.icon}
-                </svg>
-              </span>
-              <div>
-                <strong>{sector.name}</strong>
-                <small>{sector.desc}</small>
-              </div>
+          {SECTORS.map((sector, i) => (
+            <li key={sector.name}>
+              <Reveal delay={i * 70} className="trusted-card">
+                <span className="trusted-icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {sector.icon}
+                  </svg>
+                </span>
+                <div>
+                  <strong>{sector.name}</strong>
+                  <small>{sector.desc}</small>
+                </div>
+              </Reveal>
             </li>
           ))}
         </ul>

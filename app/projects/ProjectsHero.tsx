@@ -1,5 +1,6 @@
 import { TopoContours } from "../components/IndustrialBackdrops";
 import Reveal from "../components/Reveal";
+import ProjectsHeroPhoto from "./ProjectsHeroPhoto";
 import { PORTFOLIO_PROJECTS } from "./projects-data";
 
 const SECTORS = [
@@ -14,6 +15,7 @@ const SECTORS = [
 export default function ProjectsHero() {
   return (
     <section className="projects-hero" id="projects-hero">
+      <ProjectsHeroPhoto />
       <div className="bg-art grid-field grid-field--light" />
       <div className="bg-art">
         <TopoContours className="bg-art" />
@@ -37,10 +39,6 @@ export default function ProjectsHero() {
             </Reveal>
           ))}
         </div>
-
-        <span className="scroll-cue" aria-hidden="true">
-          Scroll
-        </span>
       </div>
     </section>
   );

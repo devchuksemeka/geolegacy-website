@@ -1,5 +1,6 @@
 import { TopoContours } from "../components/IndustrialBackdrops";
 import Reveal from "../components/Reveal";
+import AboutHeroPhoto from "./AboutHeroPhoto";
 import { HERO_CHIPS } from "./about-data";
 
 function ChipIcon({ icon }: { icon: string }) {
@@ -35,6 +36,7 @@ function ChipIcon({ icon }: { icon: string }) {
 export default function AboutHero() {
   return (
     <section className="about-hero" id="about-hero">
+      <AboutHeroPhoto />
       <div className="bg-art grid-field grid-field--light" />
       <div className="bg-art">
         <TopoContours className="bg-art" />
@@ -61,9 +63,6 @@ export default function AboutHero() {
             </Reveal>
           ))}
         </div>
-        <span className="scroll-cue" aria-hidden="true">
-          Scroll
-        </span>
       </div>
     </section>
   );

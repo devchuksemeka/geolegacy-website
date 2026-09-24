@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Reveal from "../components/Reveal";
-import ProjectArt from "./ProjectArt";
 import { PORTFOLIO_PROJECTS } from "./projects-data";
 
 export default function ProjectGrid() {
@@ -25,7 +25,15 @@ export default function ProjectGrid() {
               className="portfolio-card"
             >
               <div className="portfolio-thumb">
-                <ProjectArt variant={project.variant} />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                  className="portfolio-img"
+                  style={{ objectFit: "cover" }}
+                />
+                <span className="portfolio-scan" aria-hidden="true" />
                 <span className="portfolio-num">
                   {String(i + 2).padStart(2, "0")}
                 </span>
