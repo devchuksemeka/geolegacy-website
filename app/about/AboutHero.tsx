@@ -1,4 +1,3 @@
-import { TopoContours } from "../components/IndustrialBackdrops";
 import Reveal from "../components/Reveal";
 import AboutHeroPhoto from "./AboutHeroPhoto";
 import { HERO_CHIPS } from "./about-data";
@@ -37,10 +36,6 @@ export default function AboutHero() {
   return (
     <section className="about-hero" id="about-hero">
       <AboutHeroPhoto />
-      <div className="bg-art grid-field grid-field--light" />
-      <div className="bg-art">
-        <TopoContours className="bg-art" />
-      </div>
       <div className="wrap">
         <Reveal>
           <span className="kicker kicker-light">About Us</span>

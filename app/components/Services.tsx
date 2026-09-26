@@ -43,7 +43,7 @@ export default function Services() {
     <section className="services section-pad px-section" id="services">
       <div
         className="px-bg"
-        style={{ backgroundImage: "url(/images/work/services-hero.jpg)" }}
+        style={{ backgroundImage: "url(/images/work/marine-platform.jpg)" }}
         aria-hidden="true"
       />
       <div className="px-overlay px-overlay--light" aria-hidden="true" />

@@ -37,9 +37,9 @@ export default function Mission() {
         </div>
 
         <PhotoBand
-          src="/images/work/about-mission.jpg"
-          alt="GeoLegacy survey crew on a vessel during offshore site work"
-          caption="Field operations — offshore campaign"
+          src="/images/work/team-group.jpg"
+          alt="The GeoLegacy Survey team — one accountable crew from field to office"
+          caption="One accountable team — field and office"
           className="mission-photo"
         />
       </div>

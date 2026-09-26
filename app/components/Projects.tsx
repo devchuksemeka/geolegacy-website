@@ -4,25 +4,25 @@ import Reveal from "./Reveal";
 
 const WORK = [
   {
-    img: "/images/work/home-01.jpg",
+    img: "/images/work/land-tripod.jpg",
     eyebrow: "Land Survey",
-    title: "Topographic mapping — mixed-use development",
-    body: "Full boundary and topographic survey supporting master planning approvals.",
-    alt: "Surveyor working on site during a land survey",
+    title: "Control networks & topographic mapping",
+    body: "Total station traverses tied to GPS survey control — boundaries, terrain and features mapped to survey grade.",
+    alt: "Total station survey on a tripod during a land control survey",
   },
   {
-    img: "/images/work/home-02.jpg",
+    img: "/images/work/hydro-mooring.jpg",
     eyebrow: "Hydrographic",
-    title: "Bathymetric survey — port access channel",
-    body: "Seabed profiling and sounding to support dredging and channel design.",
-    alt: "Survey vessel operating on the water during a hydrographic survey",
+    title: "Mooring, berth & port surveys",
+    body: "Buoy positions, berth footprints and channel soundings charted for marine operations you can insure.",
+    alt: "Mooring buoy surveyed during a hydrographic and port survey",
   },
   {
-    img: "/images/work/home-03.jpg",
+    img: "/images/work/drilling-crew.jpg",
     eyebrow: "Geotechnical",
-    title: "Soil investigation — industrial facility",
-    body: "Borehole logging and lab analysis informing foundation design parameters.",
-    alt: "Crew carrying out geotechnical soil investigation on site",
+    title: "Boreholes & in-situ field testing",
+    body: "Crews log soils and run SPT on site — foundation parameters your structural engineer can trust.",
+    alt: "Geotechnical crew carrying out borehole and in-situ testing on site",
   },
 ];
 
@@ -32,11 +32,11 @@ export default function Projects() {
       <div className="wrap">
         <div className="section-head">
           <Reveal>
-            <span className="kicker">Selected work</span>
-            <h2>Projects across land and water</h2>
+            <span className="kicker">Work at a glance</span>
+            <h2>Real crews, real kit, real sites</h2>
             <p>
-              A cross-section of the site investigations our team plans, acquires
-              and delivers.
+              A look at the surveys, investigations and deliverables we plan,
+              acquire and process.
             </p>
           </Reveal>
         </div>
@@ -44,7 +44,7 @@ export default function Projects() {
         <div className="projects-grid">
           {WORK.map((item, i) => (
             <Reveal key={item.title} delay={i * 90}>
-              <a href="#contact" className="project-card">
+              <a href="#projects" className="project-card">
                 <div className="project-thumb">
                   <Image
                     src={item.img}
@@ -69,7 +69,7 @@ export default function Projects() {
         <div className="section-more">
           <Reveal variant="scale">
             <Link href="/projects" className="section-link">
-              View all projects
+              View our work
               <svg
                 viewBox="0 0 24 24"
                 fill="none"

@@ -12,10 +12,10 @@ export default function AboutHeroPhoto() {
       aria-hidden="true"
     >
       <Image
-        src="/images/work/home-01.jpg"
+        src="/images/work/field-crew.jpg"
         alt=""
-        width={1200}
-        height={799}
+        width={1396}
+        height={1600}
         priority
         onLoad={() => setLoaded(true)}
       />

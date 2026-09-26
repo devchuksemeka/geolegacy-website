@@ -1,182 +1,91 @@
-export type Project = {
+export type PortfolioItem = {
   id: string;
   category: string;
   title: string;
-  location: string;
-  year: string;
-  sector: string;
-  summary: string;
-  services: string[];
-  stats: { label: string; value: string }[];
-  variant: "land" | "water" | "ground" | "signal";
+  line: string;
   image: string;
 };
 
-const FEATURE: Project = {
-  id: "lekki-development",
-  category: "Land Survey",
-  title: "Topographic and boundary survey for a mixed use development",
-  location: "Lekki, Lagos",
-  year: "2024",
-  sector: "Real estate development",
-  summary:
-    "A 320 hectare masterplan in need of a single source of spatial truth. We set the control network, adjudicated the boundaries, mapped the full extent of the site and handed over one coordinated survey the design team could build on.",
-  services: [
-    "Topographic and detail mapping",
-    "Cadastral and boundary adjudication",
-    "GNSS control network",
-    "Area and volume computation",
-  ],
-  stats: [
-    { label: "Area mapped", value: "320 ha" },
-    { label: "Boundary beacons", value: "1,240" },
-    { label: "Field campaign", value: "9 weeks" },
-  ],
-  variant: "land",
-  image: "/images/work/featured.jpg",
+export const FEATURED_WORK: PortfolioItem = {
+  id: "marine-port-works",
+  category: "Marine & Port Infrastructure",
+  title: "Port, berth and terminal surveys — delivered to chart grade",
+  line:
+    "From mooring buoys to vessel berths, we acquire the bathymetry, positioning and seabed data that keeps marine infrastructure safe, insurable and buildable.",
+  image: "/images/work/dock-machine.jpg",
 };
 
-const GRID: Project[] = [
+export const PORTFOLIO: PortfolioItem[] = [
   {
-    id: "ph-channel",
+    id: "control-topographic",
+    category: "Land Survey",
+    title: "Control networks & topographic mapping",
+    line:
+      "Total station traverses tied to a GNSS control network — boundaries, terrain and features mapped to survey grade.",
+    image: "/images/work/land-tripod.jpg",
+  },
+  {
+    id: "mooring-berth-surveys",
     category: "Hydrographic Survey",
-    title: "Bathymetric survey of a port access channel",
-    location: "Port Harcourt, Rivers State",
-    year: "2023",
-    sector: "Ports and dredging",
-    summary:
-      "Single and multibeam sounding along the approach channel to support a dredging campaign and updated nautical products.",
-    services: ["Multibeam bathymetry", "Side scan sonar", "Tidal control"],
-    stats: [
-      { label: "Channel surveyed", value: "18 km" },
-      { label: "Soundings", value: "42,000+" },
-      { label: "Field campaign", value: "6 weeks" },
-    ],
-    variant: "water",
-    image: "/images/work/proj-01.jpg",
+    title: "Mooring, berth & port surveys",
+    line:
+      "Buoy positions, berth footprints and channel soundings acquired and charted for marine operations you can insure.",
+    image: "/images/work/hydro-mooring.jpg",
   },
   {
-    id: "ikeja-industrial",
+    id: "borehole-spot-testing",
     category: "Geotechnical Investigation",
-    title: "Soil investigation for an industrial facility",
-    location: "Ikeja, Lagos",
-    year: "2023",
-    sector: "Industrial development",
-    summary:
-      "Eighteen boreholes across a constrained factory site, logged and tested to foundation depth for the structural design.",
-    services: ["Borehole drilling", "SPT and in situ testing", "Laboratory testing"],
-    stats: [
-      { label: "Boreholes", value: "18" },
-      { label: "SPT tests", value: "360" },
-      { label: "Lab samples", value: "120" },
-    ],
-    variant: "ground",
-    image: "/images/work/proj-02.jpg",
+    title: "Boreholes & in-situ field testing",
+    line:
+      "Crews log soils and run SPT through constrained sites — foundation parameters your structural engineer can trust.",
+    image: "/images/work/drilling-crew.jpg",
   },
   {
-    id: "bonny-pipeline",
+    id: "rtk-field-desktop",
+    category: "Positioning & GNSS",
+    title: "RTK acquisition, logged on site",
+    line:
+      "Real-time survey-grade positioning captured at the rock face and recorded straight to the project database.",
+    image: "/images/work/grid-laptop.jpg",
+  },
+  {
+    id: "control-desktop-processing",
+    category: "GIS & Remote Sensing",
+    title: "Control & desktop processing",
+    line:
+      "Our processing team computes control networks, cleans observations and builds the GIS layers your ops floor uses.",
+    image: "/images/work/svc-gis.jpg",
+  },
+  {
+    id: "subsea-geophysical",
     category: "Geophysical Survey",
-    title: "Sub bottom profiling ahead of a pipeline crossing",
-    location: "Bonny, Rivers State",
-    year: "2022",
-    sector: "Energy",
-    summary:
-      "Continuous sub bottom profiling along the crossing corridor to locate shallow hazards and confirm burial conditions.",
-    services: ["Sub bottom profiling", "Magnetometry", "Interpretation"],
-    stats: [
-      { label: "Route length", value: "12 km" },
-      { label: "Profiles run", value: "24" },
-      { label: "Deliverables", value: "2 weeks" },
-    ],
-    variant: "signal",
-    image: "/images/work/proj-03.jpg",
+    title: "Subsea geophysical spread",
+    line:
+      "Sonar, positioning and seabed sensing run through towed and deployed spreads ahead of subsea works.",
+    image: "/images/work/svc-hydro.jpg",
   },
   {
-    id: "abuja-gis",
-    category: "Positioning, GIS & Remote Sensing",
-    title: "GIS asset database for a water utility network",
-    location: "Abuja, Federal Capital Territory",
-    year: "2024",
-    sector: "Utilities",
-    summary:
-      "Field capture, GNSS positioning and data cleaning that turned 14,500 undocumented network assets into a working GIS.",
-    services: ["GNSS field capture", "GIS database build", "Web mapping"],
-    stats: [
-      { label: "Assets captured", value: "14,500" },
-      { label: "Service zones", value: "4" },
-    ],
-    variant: "signal",
-    image: "/images/work/proj-04.jpg",
+    id: "crew-mobilisations",
+    category: "Field Operations",
+    title: "HSE-led crew mobilisations",
+    line:
+      "Identified crews, calibrated instruments and disciplined site setup — every mobilisation runs to one safety standard.",
+    image: "/images/work/grid-crew.jpg",
   },
   {
-    id: "onne-jetty",
-    category: "Hydrographic Survey",
-    title: "Seabed survey for a jetty expansion",
-    location: "Onne, Rivers State",
-    year: "2021",
-    sector: "Marine infrastructure",
-    summary:
-      "Detailed seabed survey and sampling at the jetty footprint ahead of berth deepening and fender works.",
-    services: ["Multibeam bathymetry", "Seabed sampling", "Bathymetric charting"],
-    stats: [
-      { label: "Area surveyed", value: "48 ha" },
-      { label: "Seabed samples", value: "32" },
-    ],
-    variant: "water",
-    image: "/images/work/proj-05.jpg",
+    id: "processing-delivery",
+    category: "Processing & Delivery",
+    title: "Interpretation & engineering-ready reports",
+    line:
+      "Data cleaned, modelled and delivered in-house — the same team that acquired it finishes the job.",
+    image: "/images/work/grid-office.jpg",
   },
   {
-    id: "kubwa-housing",
-    category: "Land Survey",
-    title: "Cadastral survey for a housing estate",
-    location: "Kubwa, Abuja",
-    year: "2022",
-    sector: "Housing development",
-    summary:
-      "Full cadastral adjudication of 780 plots, title documentation and coordinated street and utility survey.",
-    services: ["Cadastral adjudication", "Title documentation", "Utility survey"],
-    stats: [
-      { label: "Plots adjudicated", value: "780" },
-      { label: "Titles processed", value: "780" },
-    ],
-    variant: "land",
-    image: "/images/work/proj-06.jpg",
-  },
-  {
-    id: "tincan-berth",
-    category: "Geotechnical Investigation",
-    title: "Ground investigation for a container terminal upgrade",
-    location: "Apapa, Lagos",
-    year: "2021",
-    sector: "Terminals and logistics",
-    summary:
-      "Deep boreholes and in situ testing through reclaimed ground to confirm pile design parameters for new crane rails.",
-    services: ["Deep drilling", "In situ testing", "Foundation parameters"],
-    stats: [
-      { label: "Boreholes", value: "14" },
-      { label: "Max depth", value: "45 m" },
-    ],
-    variant: "ground",
-    image: "/images/work/proj-07.jpg",
-  },
-  {
-    id: "owo-line",
-    category: "Land Survey",
-    title: "Route survey for a transmission line corridor",
-    location: "Owo, Ondo State",
-    year: "2020",
-    sector: "Energy transmission",
-    summary:
-      "Topographic strips along 40 km of proposed route, tower spot heights and land parcel records for the right of way.",
-    services: ["Route topographic survey", "Spot heights", "Parcel mapping"],
-    stats: [
-      { label: "Corridor surveyed", value: "40 km" },
-      { label: "Tower spots", value: "96" },
-    ],
-    variant: "land",
-    image: "/images/work/proj-08.jpg",
+    id: "the-team",
+    category: "The Team",
+    title: "Surveyors, geologists & geomaticians, one crew",
+    line:
+      "Field and office specialists accountable from the first control point to the final signature on your report.",
+    image: "/images/work/grid-team.jpg",
   },
 ];
-
-export const FEATURED_PROJECT = FEATURE;
-export const PORTFOLIO_PROJECTS = GRID;

@@ -12,10 +12,10 @@ export default function ServicesHeroPhoto() {
       aria-hidden="true"
     >
       <Image
-        src="/images/work/services-hero.jpg"
+        src="/images/work/marine-platform.jpg"
         alt=""
-        width={2400}
-        height={1800}
+        width={1080}
+        height={719}
         priority
         onLoad={() => setLoaded(true)}
       />

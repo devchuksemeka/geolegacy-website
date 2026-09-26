@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { motion, type Variants } from "motion/react";
 
 export type RevealVariant =
   | "up"
@@ -9,6 +9,18 @@ export type RevealVariant =
   | "right"
   | "scale"
   | "blur";
+
+const TRANSITIONS: Record<RevealVariant, Variants> = {
+  up: { hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0 } },
+  down: { hidden: { opacity: 0, y: -18 }, show: { opacity: 1, y: 0 } },
+  left: { hidden: { opacity: 0, x: 32 }, show: { opacity: 1, x: 0 } },
+  right: { hidden: { opacity: 0, x: -32 }, show: { opacity: 1, x: 0 } },
+  scale: { hidden: { opacity: 0, scale: 0.93 }, show: { opacity: 1, scale: 1 } },
+  blur: {
+    hidden: { opacity: 0, y: 12, filter: "blur(7px)" },
+    show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  },
+};
 
 export default function Reveal({
   children,
@@ -21,37 +33,24 @@ export default function Reveal({
   delay?: number;
   variant?: RevealVariant;
 }) {
-  const [visible, setVisible] = useState(false);
-
-  const ref = useCallback((node: HTMLDivElement | null) => {
-    if (!node) return;
-    if (!("IntersectionObserver" in window)) {
-      setVisible(true);
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            io.disconnect();
-          }
-        });
-      },
-      { threshold: 0.15 },
-    );
-    io.observe(node);
-  }, []);
+  const variants = TRANSITIONS[variant];
 
   return (
-    <div
-      ref={ref}
-      className={`reveal reveal--${variant}${visible ? " in-view" : ""}${
-        className ? ` ${className}` : ""
-      }`}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+    <motion.div
+      className={`reveal${className ? ` ${className}` : ""}`}
+      initial="hidden"
+      variants={variants}
+      whileInView="show"
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        type: "spring",
+        stiffness: 110,
+        damping: 20,
+        mass: 0.9,
+        delay: delay / 1000,
+      }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

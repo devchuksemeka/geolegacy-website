@@ -25,13 +25,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="section-pad px-section" id="process">
-      <div
-        className="px-bg"
-        style={{ backgroundImage: "url(/images/work/services-bg-1.jpg)" }}
-        aria-hidden="true"
-      />
-      <div className="px-overlay px-overlay--light" aria-hidden="true" />
+    <section className="section-pad" id="process">
       <div className="wrap">
         <div className="section-head">
           <Reveal>

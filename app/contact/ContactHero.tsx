@@ -1,5 +1,7 @@
 import { RadarRings } from "../components/IndustrialBackdrops";
+import OrbArt from "../components/OrbArt";
 import Reveal from "../components/Reveal";
+import ContactHeroPhoto from "./ContactHeroPhoto";
 
 const CHIPS = [
   { label: "48-hour response", icon: "clock" },
@@ -64,6 +66,8 @@ function ChipIcon({ icon }: { icon: string }) {
 export default function ContactHero() {
   return (
     <section className="contact-hero" id="contact-hero">
+      <ContactHeroPhoto />
+      <OrbArt />
       <div className="bg-art grid-field grid-field--light" />
       <div className="bg-art radar">
         <RadarRings className="bg-art" />

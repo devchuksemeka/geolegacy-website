@@ -1,4 +1,3 @@
-import { TopoContours } from "../components/IndustrialBackdrops";
 import Reveal from "../components/Reveal";
 import ServicesHeroPhoto from "./ServicesHeroPhoto";
 
@@ -48,10 +47,6 @@ export default function ServicesHero() {
   return (
     <section className="services-hero" id="services-hero">
       <ServicesHeroPhoto />
-      <div className="bg-art grid-field grid-field--light" />
-      <div className="bg-art">
-        <TopoContours className="bg-art" />
-      </div>
       <div className="wrap">
         <Reveal>
           <h1>

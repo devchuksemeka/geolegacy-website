@@ -5,7 +5,7 @@ export default function Stats() {
     <section className="stats px-section">
       <div
         className="px-bg"
-        style={{ backgroundImage: "url(/images/work/featured.jpg)" }}
+        style={{ backgroundImage: "url(/images/work/office-team.jpg)" }}
         aria-hidden="true"
       />
       <div className="px-overlay px-overlay--light" aria-hidden="true" />

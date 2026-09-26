@@ -25,13 +25,7 @@ const LAYERS = [
 
 export default function DeeperLook() {
   return (
-    <section className="depth section-pad px-section" id="about">
-      <div
-        className="px-bg"
-        style={{ backgroundImage: "url(/images/work/services-bg-2.jpg)" }}
-        aria-hidden="true"
-      />
-      <div className="px-overlay px-overlay--dark" aria-hidden="true" />
+    <section className="depth section-pad" id="about">
       <div className="grid-field" style={{ height: "100%", opacity: 0.3 }} />
       <div className="wrap depth-layout">
         <div>
@@ -68,8 +62,8 @@ export default function DeeperLook() {
 
         <div className="depth-photo">
           <Image
-            src="/images/work/depth-portrait.jpg"
-            alt="Layered site investigation — surface, subsurface and seabed"
+            src="/images/work/deep-sea.jpg"
+            alt="Specialist subsea survey equipment prepared for a deep-sea investigation"
             fill
             sizes="(max-width: 768px) 100vw, 560px"
             style={{ objectFit: "cover" }}

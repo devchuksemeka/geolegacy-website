@@ -12,10 +12,10 @@ export default function ProjectsHeroPhoto() {
       aria-hidden="true"
     >
       <Image
-        src="/images/work/proj-07.jpg"
+        src="/images/work/tripod-hero.jpg"
         alt=""
-        width={1200}
-        height={1200}
+        width={1600}
+        height={1600}
         priority
         onLoad={() => setLoaded(true)}
       />

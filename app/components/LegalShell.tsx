@@ -18,18 +18,21 @@ export default function LegalShell({
 }) {
   return (
     <>
-      <main id="main">
-        <section className="legal-hero">
-          <div className="grid-field grid-field--light" style={{ height: "100%" }} />
-          <div className="wrap">
+      <main id='main'>
+        <section className='legal-hero'>
+          <div
+            className='grid-field grid-field--light'
+            style={{ height: "100%" }}
+          />
+          <div className='wrap'>
             <h1>{title}</h1>
             <p>{intro}</p>
-            <p className="legal-updated">Last updated: {updated}</p>
+            <p className='legal-updated'>Last updated: {updated}</p>
           </div>
         </section>
 
-        <section className="legal-body section-pad">
-          <div className="wrap legal-layout">
+        <section className='legal-body section-pad'>
+          <div className='wrap legal-layout'>
             {sections.map((section) => (
               <article key={section.heading}>
                 <h2>{section.heading}</h2>
