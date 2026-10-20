@@ -42,14 +42,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  icons: {
-    icon: [
-      {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23101425'/%3E%3Cg fill='%236FA1FF'%3E%3Crect x='35' y='15' width='30' height='30' rx='4' transform='rotate(45 50 30)'/%3E%3C/g%3E%3C/svg%3E",
-        type: "image/svg+xml",
-      },
-    ],
-  },
   openGraph: {
     type: "website",
     title:
@@ -73,15 +65,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html lang='en' className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body>
-        <a href="#main" className="skip-link">
+        <a href='#main' className='skip-link'>
           Skip to content
         </a>
         <Header />
         {children}
         <script
-          type="application/ld+json"
+          type='application/ld+json'
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
