@@ -1,7 +1,7 @@
 export const BUSINESS = {
   brandName: "GeoLegacy Survey",
   website: "https://www.geolegacysurvey.com",
-  email: "contact@geolegacy.com",
+  email: "contact@geolegacysurvey.com",
   phoneDisplay: "+234 806 591 8435",
   phoneHref: "tel:+2348065918435",
   whatsappNumber: "2348065918435",

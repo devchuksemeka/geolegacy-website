@@ -63,7 +63,7 @@ export function getMailerDiagnostics() {
 }
 
 export async function sendEnquiryEmail(payload: EnquiryPayload): Promise<void> {
-  const to = process.env.CONTACT_TO_EMAIL ?? "contact@geolegacy.com";
+  const to = process.env.CONTACT_TO_EMAIL ?? "contact@geolegacysurvey.com";
   const from = process.env.CONTACT_FROM_EMAIL ?? `GeoLegacy Survey <${SMTP.user}>`;
   const subject = `New survey enquiry — ${payload.serviceName} (${payload.name})`;
 

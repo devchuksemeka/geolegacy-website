@@ -72,7 +72,7 @@ const SECTIONS = [
   {
     heading: "9. Your rights",
     body: [
-      "You may ask us to access, correct or delete the personal information we hold about you, or to restrict how it is processed, by contacting us at contact@geolegacy.com.",
+      "You may ask us to access, correct or delete the personal information we hold about you, or to restrict how it is processed, by contacting us at contact@geolegacysurvey.com.",
       "We will respond to requests within a reasonable period and in line with applicable law.",
     ],
   },
@@ -85,7 +85,7 @@ const SECTIONS = [
   {
     heading: "11. Contact us",
     body: [
-      "Questions or requests relating to this policy can be sent to contact@geolegacy.com.",
+      "Questions or requests relating to this policy can be sent to contact@geolegacysurvey.com.",
     ],
   },
 ];

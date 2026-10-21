@@ -95,7 +95,7 @@ const SECTIONS = [
   {
     heading: "12. Contact",
     body: [
-      "Questions about these terms can be sent to contact@geolegacy.com.",
+      "Questions about these terms can be sent to contact@geolegacysurvey.com.",
     ],
   },
 ];
